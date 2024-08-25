@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:latest
+    restart: unless-stopped
+    ports:
+      - ${IPERX_DATABASE_PORT:-5432}:5432
+    environment:
+      POSTGRESS_USER: ${IPERX_DATABASE_USER}
+      POSTGRES_PASSWORD: ${IPERX_DATABASE_PASSWORD}
+      POSTGRES_DB: ${IPERX_DATABASE_NAME}
+    volumes:
+      - db:/var/lib/postgresql/data
+
+volumes:
+  db:
+    driver: local
