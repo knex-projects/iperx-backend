@@ -1,2 +1,9 @@
-.env
+# Node modules
 node_modules
+
+# Env
+.env
+
+# IDE - Vscode
+.vscode/*
+
